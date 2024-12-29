@@ -1,0 +1,4 @@
+dom is documnt object model
+dom model me har ek chiz ko node bola jata ha like text node, head node
+
+html collections which are given as result in DOM manipulation are diff. from arrays but can be converted to arrays
