@@ -19,7 +19,7 @@ for (const greet of greetings) {
     console.log(`Each char is ${greet}`);
 }
 
-// maps are new datatypes in js like arrays
+// maps are new datatypes in js .they behave like arrays
 // maps store "unique" key-value pairs
 const map=new Map();
 map.set("IN","INDIa");
