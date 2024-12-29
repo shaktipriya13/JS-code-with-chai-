@@ -1,0 +1,2 @@
+all the things in js run sequentially
+mostly events are of 2 types: browser and envrnmt events

@@ -1,0 +1,19 @@
+Node JS is nothing but just a software that can excute JS file
+
+The founder of node js and deno js is Ryal dhal.
+
+git icon is the source control . it tracks all the changes we have made so far.
+GOAL: social media app
+
+JS ka compiler ka nam ha V8 ya node.js
+unme defined ha ki const, let ya var mike toh usko memory me assign krdo
+node.js compiler srae code ko analyze bhi krta ha ki tumne kya code galat likha ha
+
+
+Above shows DOM structure which imp. To draw for interviews
+
+
+
+
+
+
