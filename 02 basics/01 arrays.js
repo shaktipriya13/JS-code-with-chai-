@@ -102,3 +102,6 @@ For example, with const slicedFruits = fruits.slice(1, 3);:
 
 const here means: You cannot reassign slicedFruits to another array or value. For instance, slicedFruits = ["new", "array"] would throw an error.
 However, the elements of the array can still be modified: You can modify the contents of slicedFruits by using methods like .push() or directly setting elements.*/
+
+
+// updating code
