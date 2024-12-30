@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai and Code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <!-- comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent=document.querySelector('.parent');
+    // to select a class . is used
+    console.log(parent);
+    console.log(parent.children);//gives html collections of all day elmnts which will be used to target elmnts in dom
+    // html collections are array like elmnts
+    console.log(parent.children[0]);
+    console.log(parent.children[0].innerHTML);
+    // Jitne bhi elmnts hote ha sabke koi na koi children hote ha
+
+    // note: our older classic for loop works on all array-like elmnts(nodelist, html collections)
+    const arr=parent.children;
+    for(let i=0; i<arr.length;++i){
+        // size() is not a method for HTMLCollection:
+        // with i here const should not be used
+        console.log(`${arr[i].innerHTML} is the ${i+1}th childern of parent elmnt`);
+    }
+
+    //changing styling
+    parent.children[2].style.color="blue";
+    parent.children[2].style.backgroundColor="white";
+    parent.children[2].style.padding="30px";
+    parent.children[2].style.borderRadius="30px";
+    console.log("-----------------------------------------");
+
+    console.log(parent.firstElementChild);//moving from parent to child
+    const lastChild=parent.lastElementChild;
+    lastChild.style.color="pink";
+
+    const firstChild=parent.firstElementChild;
+    firstChild.style.backgroundColor="orange";
+
+
+    // moving from child to parent
+    // note: querySelector is an expensive opertaion as it travels through entire DOM structure...so querySelector takes time
+
+    console.log("+++++++++++++++++++++++++++++++++++++");
+    const dayOne=document.querySelector('.day');
+    console.log(dayOne);
+    console.log(dayOne.parentElement);
+    console.log(dayOne.nextElementSibling);
+    console.log("+++++++++++++++++++++++++++++++++++++");
+
+    // the child nodes in itself is a complex tree structure
+    // the entire DOM is a tree structure....here everything has an importance...even a line break is a node elmnt 
+
+    // hume jo dikhta uske behind web bhut hi complex dom tree structure banata ha
+    // line break is counted as text elmnt
+    // html me "continuous" multiple line breaks ko bhi browser 1 hi count krta ha
+    console.log("NODES: ",parent.childNodes);
+    // 2024-12-30-12-37-41.png
+</script>
+</html>

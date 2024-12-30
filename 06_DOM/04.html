@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code|DOM</title>
+</head>
+<body style="background-color: #414141; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    const list=document.querySelector('.language');
+    const item1=document.createElement('li');
+    item1.innerText="C++";
+    list.appendChild(item1);// Appends the new list item to the "language" list directly...here refernce to body is not req. as we have stored the ul in a list named variable
+    
+    // writing fxn to add more languages to list
+
+    // mySoln
+    // function addItem(lname){
+    //     const item=document.createElement('li');
+    //     item.innerText=lname
+    //     list.appendChild(item);
+    // }
+
+    // addItem("Ruby");
+    // addItem("Python");
+    // addItem("Swelt");
+
+    // sir
+    function addLang(lname){
+        const li=document.createElement('li');
+        li.innerHTML=`${lname}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    addLang("python");
+    addLang("Ruby");
+
+    // above 2 are basic methods and hv prblm as in each case the items are appended to end of list..so in for each item added the DOM tree has to be traversed again and again to end......and so if there 1 lakh items ,may lead to very time consuming code(optimization issues)
+
+    // optimized approach : yha pura tree traverse nhi krna par rha
+    // innerHTML use krne par pura tree traverse hota ha
+
+    function addOptiLang(lname){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(lname));//to add text to li without using innerHTML-> preffered approach for big prjcts
+        document.querySelector('.language').appendChild(li);
+        // appendChild is better than innerHTML
+    }
+    addOptiLang("Golang")
+
+    //Edit
+    const secondLang=document.querySelector("li:nth-child(2)");
+    secondLang.innerHTML="Mojo";
+
+    //optimized method
+    const thirdLang=document.querySelector("li:nth-child(3)");
+    const newli=document.createElement('li');
+    newli.innerText="Java";
+    thirdLang.replaceWith(newli);
+
+    // edit
+    const firstLang=document.querySelector("li:nth-child(1)");
+    const l1=document.createElement('li');
+    l1.innerText="TypeScript";
+    firstLang.replaceWith(l1);
+    
+</script>
+</html>

@@ -1,7 +1,7 @@
 // map
 const arr=[1,2,3,4,5,6,7,8,9,10]
 // adding 10 to each value in arr
-// map returns value
+// "map returns value"
 const newNums=arr.map((n)=>n+10)
 //agar scope open kroge using{} then return keyword has to be used
 const newNums2=arr.map((n)=>{return n+10})

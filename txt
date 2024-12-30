@@ -12,6 +12,10 @@ node.js compiler srae code ko analyze bhi krta ha ki tumne kya code galat likha 
 
 Above shows DOM structure which imp. To draw for interviews
 
+jitn dom ka knowledge utna interviews crack kr payenge
+foundation of js must be very strong
+
+
 
 
 

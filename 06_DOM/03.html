@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai & Code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    // note: every elmnt individually is in itself a node elmnt
+    
+    const div=document.createElement('div')
+    console.log(div);
+    
+    // through js whenever we target class it is called as className
+    div.className="main";
+    div.id=Math.round(Math.random()*10+1);//math is a library
+    
+    div.setAttribute("title","generated title")
+    // we hv a created a div but till now it is only in the memory...it is so not displayed on the webpage
+    
+    // div.innerHTML="<h1>Shakti Priya</h1>"
+    div.innerText="Chai aur code";// this is not preffered as innerText first fetches the value and then the value inside the div node is altered
+
+    // styling
+    div.style.color="red";
+    div.style.backgroundColor="yellow"
+    div.style.padding="30px"
+    
+    // creating text node
+    const addText=document.createTextNode("Chai aur code");
+    div.appendChild(addText)
+
+    // attaching 'div' elmnt to documnt
+    document.body.appendChild(div);
+
+    // note: ek bar aisa jab div ban gya we can wrap it in a fxn and then pass parameters like color and innertext etc
+    // we can also do looping on color list array
+
+    // ASSIGNMNT☕
+    function createDiv(color1,text){
+
+        const div=document.createElement('div');
+        div.innerText=text;
+        // div.innerHTML="</br>"
+        div.style.color=color1;
+
+        document.body.appendChild(div);
+    };
+
+    const clr=["pink","green","yellow","orange"]
+    const txt=["pink","green","yellow","orange"]
+    for(let i=0;i<4;++i){
+        createDiv(clr[i],txt[i])
+    }
+
+</script>
+</html>

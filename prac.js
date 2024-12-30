@@ -1,10 +1,27 @@
-// for(const char of "aji sunte ho") console.log(char," ");
+const shoppingCart=[
+    {
+        itemName: "py Course",
+        price: 999
+    },
+    {
+        itemName: "py Course",
+        price: 999
+    },
+    {
+        itemName: "C++ Course",
+        price: 1999
+    },
+    {
+        itemName: "web dev Course",
+        price: 2999
+    },
+    {
+        itemName: "ML AI Course",
+        price: 6999
+    }
+]
 
-const mapw=new Map();
-mapw.set(1,"shena");
-mapw.set(2,"kite");
-
-// console.log(mapw);
-for(const [key,val] of mapw){
-    console.log(`${key} ka value is ${val}`);
-}
+const tp=shoppingCart.reduce((ac,item)=>{
+    return ac+item.price;
+},0)
+console.log(tp);

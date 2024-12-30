@@ -1,4 +1,5 @@
-// forEach loop: used mostly
+// forEach loop: used mostly because in forEach we don't have to worry for iterations and incrmnt/dcrmnt counter
+
 const coding=["cpp","java","python","ruby","c#"]
 // some loops are directly made as a property for the arrays like forEach
 // callback fxn is fxn without name
@@ -9,6 +10,7 @@ coding.forEach(function(val){
 
 coding.forEach(function(val){
     for(const i of val) console.log(i); //in loop prints indices
+    // for in looop will print only indices
     console.log("-------------------");
 })
 

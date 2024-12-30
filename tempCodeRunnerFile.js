@@ -1,3 +1,2 @@
-(function sub(a,b){
-    console.log(a-b);
-})(9,2);
+erBooks=books.filter((book)=>{return book.genre==='History'})
+// console.log(userBooks);
