@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body style="background-color:#414141; color: aliceblue;">
+    <h2>amazing Images </h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="candle" src="https://images.pexels.com/photos/29864188/pexels-photo-29864188/free-photo-of-elegant-holiday-candle-decor-on-festive-table.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" onclick="alert('here is the candle')"></li><br>
+            <!-- don't inject js actions inside html in case of pure JS -->
+
+            <li><img width="200px" id="tree" src="https://images.pexels.com/photos/29726496/pexels-photo-29726496/free-photo-of-family-decorating-christmas-tree-with-ornaments.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li><br>
+
+            <li><img width="200px" id="gift" src="https://images.pexels.com/photos/6102093/pexels-photo-6102093.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" onclick="alert('Giftssss!!!')"></li><br>
+
+            <li><img width="200px" id="wallpaper" src="https://images.pexels.com/photos/14543391/pexels-photo-14543391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li><br>
+
+            <li><a id="google" style="color: aliceblue;" href="https://www.youtube.com/watch?v=_ALUMTa8BAE&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=37">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('candle').onclick=function(){
+        alert("Candles clicked!")
+    }//onclick me jyada info. nhi milti ha so we should use event listeners bcoz they also provide us with propagation abilites
+
+    //this approach of onclick gives u less features
+    // eventlistener method is best as gives many features: mouse,keyboard listeners, drag and drop etc
+
+    // jo event ka nam ha wo strings me likhna ha
+    // ek 3rd parameter bhi hota ha addEventListener me jo by default 'false' hota ha , so we can omit it to write☕
+    document.getElementById('tree').addEventListener('click',function(){
+        alert("X-mas Tree")
+    })
+    // other older methods to add events are: 1. attachEvent(), 2. jQuery-onEvent Listener
+
+   
+        // e is called as eventObject : learn more abt it
+    document.getElementById("gift").addEventListener("click",function(e){
+        console.log(e);
+    },false)//2024-12-31-09-00-27.png
+    // the above image shows the object e .actually e is an object having key-value pairs
+    // ques are asked in interview from it to make an application to print timestamp when u clicked,konsa view tha, aapne jab click kia toh window ki height and width kya thi
+    // ques: ek application banao jisme ek div ho and usme jha bhi click ho whi ek circle ban jae: uses x,y client position
+
+
+    //event bubbling🎉
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log("clicked inside the url");
+    });
+    document.getElementById('wallpaper').addEventListener('click',function(e){
+        console.log("Wallpaper clicked!");
+        e.stopPropagation();//isse event bubble hoke upar ki trf nhi jayega
+    });
+    /*o/p:
+    Wallpaper clicked!
+    clicked inside the url
+    */
+   //    capturing mode: just default value true krdo.capturing mode goes form top to bottom
+   document.getElementById('images').addEventListener('click',function(e){
+       console.log("clicked inside the url");
+   },true);
+   document.getElementById('tree').addEventListener('click',function(){
+       console.log("tree clicked!");
+   },true);
+   /*o/p:
+   clicked inside the url
+   Wallpaper clicked!
+   */
+
+//    prventing anchor tags
+   document.getElementById('google').addEventListener('click',function(e){
+       e.preventDefault();
+       e.stopPropagation();
+        console.log("google clicked");
+   })
+</script>
+</html>
+<!-- things to learn in js for interview:
+ type, timestamp, defaultprevented(eg: anchor a tags ke navigation bhi aap rok skte ho)
+target, toElemnt , srcElmnt , currentTarget,
+clientX, clientY, screenX, screenY ,
+altkey, ctrlkey, shiftkey(ye special keys ka access dekh skte ha ki wo press hui ha ki nhi), keycode-->
+
+<!-- event propagations have 2 contexts: event capturing and event bubbling-....depending on use case use them -->
+ <!-- event bubbling used mostly : when default is false ...in event bubbling event is propagated form bottom to top like a bubble does -->

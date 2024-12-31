@@ -14,7 +14,7 @@
     const list=document.querySelector('.language');
     const item1=document.createElement('li');
     item1.innerText="C++";
-    list.appendChild(item1);// Appends the new list item to the "language" list directly...here refernce to body is not req. as we have stored the ul in a list named variable
+    list.appendChild(item1);// Appends the new list item to the "language" list directly...here refernce to body is not req. as we have stored the ul in a "list" named variable
     
     // writing fxn to add more languages to list
 
@@ -40,6 +40,9 @@
 
     // above 2 are basic methods and hv prblm as in each case the items are appended to end of list..so in for each item added the DOM tree has to be traversed again and again to end......and so if there 1 lakh items ,may lead to very time consuming code(optimization issues)
 
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
     // optimized approach : yha pura tree traverse nhi krna par rha
     // innerHTML use krne par pura tree traverse hota ha
 
@@ -62,10 +65,13 @@
     thirdLang.replaceWith(newli);
 
     // edit
-    const firstLang=document.querySelector("li:nth-child(1)");
-    const l1=document.createElement('li');
-    l1.innerText="TypeScript";
-    firstLang.replaceWith(l1);
+    const firstLang=document.querySelector("li:first-child");
+    firstLang.outerHTML='<li>TypeScript</li>'
     
+
+    // remove eg: remove golang
+    const lastLang=document.querySelector('li:last-child');
+    lastLang.remove();
+    // practice from W3schools/mdn
 </script>
 </html>

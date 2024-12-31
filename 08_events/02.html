@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- ctrl + i to start copilot -->
+<!-- ctrl + enter to start copilot -->
+ <!-- task: when u click any image , it will disappear -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body style="background-color:#414141; color: aliceblue;">
+    <h2>amazing Images </h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="candle" src="https://images.pexels.com/photos/29864188/pexels-photo-29864188/free-photo-of-elegant-holiday-candle-decor-on-festive-table.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" onclick="alert('here is the candle')"></li><br>
+            <!-- don't inject js actions inside html in case of pure JS -->
+
+            <li><img width="200px" id="tree" src="https://images.pexels.com/photos/29726496/pexels-photo-29726496/free-photo-of-family-decorating-christmas-tree-with-ornaments.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li><br>
+
+            <li><img width="200px" id="gift" src="https://images.pexels.com/photos/6102093/pexels-photo-6102093.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" onclick="alert('Giftssss!!!')"></li><br>
+
+            <li><img width="200px" id="wallpaper" src="https://images.pexels.com/photos/14543391/pexels-photo-14543391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li><br>
+
+            <li><a id="google" style="color: aliceblue;" href="https://www.youtube.com/watch?v=_ALUMTa8BAE&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=37">Google</a></li>
+        </ul>
+    </div>
+</body>
+    <script>
+        document.querySelector("#images").addEventListener('click',function(e){
+            console.log(e.target);
+            console.log(e.target.tagName);//will give li item
+
+            if(e.target.tagName==="IMG"){
+
+                console.log(e.target.id+"is removed.");
+                let item=e.target.parentNode;//target refers to anchor tag.and its parent is the li item
+                item.remove();
+            }
+            //another method
+            // item.parentNode.removeChild(item); //parentNode se ul mila fir usse child node ie. list item mila
+        })
+        //above had event spillover where if we had not use 'if' then clicking anywhere on the ul(except the image) had let to disapperance of all images
+
+        //"Event spillover" isn’t a formal term in JavaScript or event handling; it's often used informally to describe situations where an event’s effect unintentionally "spills over" to other parts of the code or interface. This generally refers to unintended consequences of event handling, typically caused by issues in the code or misunderstanding of event propagation mechanisms like bubbling or capturing.
+    </script>
+</html>

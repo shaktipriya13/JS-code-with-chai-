@@ -9,7 +9,7 @@
 // code readibility is vimp
 /*documenatation:
 1. mdn by mozilla firefox; eg: search mdn alert : mdn hi use krna
-2. tc39.es : echmaScript...phle alag alag browsers ke alag alag js syntax the....tab sare browsers ne milke 1 organisation banayyi called echma script jisme sab js ke standards define kie gye...ye wo log padhte ha jo khudka browser ya engine banate ha*/
+2. tc39.es : echmaScript...phle alag alag browsers ke alag alag js syntax the....tab sare browsers ne milke 1 organisation banayyi called "echma script" jisme sab js ke standards define kie gye...ye wo log padhte ha jo khudka browser ya engine banate ha*/
 
 // Dataypes in JS:
 let name="Shakti" //string

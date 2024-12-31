@@ -4,6 +4,7 @@ score="33abc";//this is not a pure number but can be converted to number in JS..
 console.log(typeof score);
 console.log(typeof(score)); //written as a method
 
+// score="33";
 let valueInNum=Number(score); //conversion to number
 console.log(typeof valueInNum); //number
 console.log(valueInNum);//NaN
@@ -26,6 +27,7 @@ console.log(unNum); //NaN
 // coversion to boolean
 let x=0;
 x="";//empty string ->false
+console.log(Boolean(Number(x)));//false
 x=" ";//not empty string ->true
 x="shakti";
 let boolx=Boolean(x);
@@ -56,12 +58,17 @@ console.log(s3);
 console.log(1+'2');
 console.log('1'+2);
 console.log('1'+'2'+2+7); //1227
-console.log('1'+'2'+(2+7)); //9
+console.log('1'+'2'+(2+7)); //129
 // so use brackets to avoid any confusion
 
 console.log(1+12+'2'); //132
 // so in js jo pehle hota ha..uska hi datatype me baki sare convert hote ha
 
+//Number + Number → Addition.
+// String + Number or Number + String → Concatenation (everything becomes a string).
+
+
+//-----------------------------------------------
 // following things bas yadd rkhna....for question pattern
 // + symbol aage likhne se conversion ho jata ha to number 
 console.log(true);//true
@@ -84,7 +91,7 @@ y=a++;
 z=++a;
 console.log(`a: ${a}, y:${y}, z:${z}`);
 // ++(++x) is wrong
-
+//The code you provided will throw an error in JavaScript because increment (++) and decrement (--) operators cannot be applied twice directly to a single variable in the same expression.
 let x1 = 3;
 const y = x1++;
 // x is 4; y is 3

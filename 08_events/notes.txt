@@ -1,0 +1,3 @@
+all the things in js run sequentially
+but browser events are exceptions to the sequential events.these events get invoked on some activity
+mostly events are of 2 types: browser and envrnmt events

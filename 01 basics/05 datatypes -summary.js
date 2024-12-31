@@ -7,10 +7,13 @@ Primitive data types are immutable and stored directly by value. Once created, t
 Characteristics of Primitives:
 -> Stored by value: Each variable holds its own copy of the data.
 -> Immutable: The value cannot be changed (although the variable can point to a new value).
+
+
 -> Types of Primitive Data Types:
+//nnssbbu
 -> Number: For both integer and floating-point numbers.
 -> String: For textual data, a sequence of characters.
--> Boolean: Representing true or false.
+-> Boolean: Representing true or false.//can't be in capital
 -> Undefined: A variable that has been declared but not assigned a value.
 -> Null: Represents the intentional absence of any object value.
 -> Symbol: A unique and immutable identifier, introduced in ES6.
@@ -27,11 +30,13 @@ console.log(b); // Outputs: 5
 Non-primitive types, also called reference types, are mutable and stored by reference. This means that when you assign or pass non-primitive data, JavaScript doesn't create a copy; instead, it creates a reference to the original memory location.
 
 -> Characteristics of Non-Primitives:
+
 -> Stored by reference: Variables reference the memory location where data is stored.
 -> Mutable: The contents can be changed without changing the reference.
 
 -> Types of Non-Primitive Data Types:
--> Object: Used to store collections of data and more complex entities. Objects include:
+
+-> Object: Used to store collections of data and more complex entities. 
 -> Arrays
 -> Objects
 -> Functions
@@ -42,7 +47,7 @@ Non-primitive types, also called reference types, are mutable and stored by refe
 let arr1 = [1, 2, 3];
 let arr2 = arr1; // `arr2` is a reference to `arr1`
 arr1.push(4);
-console.log(arr2); // Outputs: [1, 2, 3, 4], showing that `arr2` reflects changes in `arr1`
+console.log(arr2); // Outputs: [1, 2, 3, 4], showing that `arr2` reflects changes in `arr1` & vice-versa
 
 
 // To mastere javascript=>  master: objects and browser events.
