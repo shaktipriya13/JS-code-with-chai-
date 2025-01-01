@@ -1,4 +1,13 @@
 // arrays  ->objects ->fxns
+
+/*In JavaScript:
+
+-> Arrays are Objects: Arrays are a special kind of object with additional methods and properties (like .length).
+-> Objects can have Functions (Methods): Functions can be stored as properties within objects.
+-> Arrays can contain Functions: You can store functions as elements in an array.
+-> Functions are Objects: Functions themselves are objects and can have properties. */
+
+
 //Data types Of elements inside an array can be different in javascript
 // JavaScript arrays are resizable and can contain a mix of different data types. 
 // All standard built-in copy operations with any JavaScript objects create shallow copies, rather than deep copies☕
@@ -25,7 +34,7 @@ console.log(a1);
 
 // unshift is used to add elmnt in array from begin
 a1.unshift(89);
-console.log(a1);//It's not optimised method as if the array is very long, then it will become very time consuming, as all the indexes of all the elements have to be shifted. But sometime it is used when the number of elements is smaller, or you need to add the element at the beginning only
+console.log(a1);//It's not optimised method as if the array is very long, then it will become very time consuming, as all the indexes of all the elements have to be shifted. But sometime it is used when the number of elements are smaller, or you need to add the element at the beginning only
 // shift is used to pop begin elmnt
 a1.shift();
 a1.shift();

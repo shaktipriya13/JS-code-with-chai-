@@ -17,9 +17,15 @@ console.log(a3);
 
 // note: push fxn modifies original array but concat returns a  new array
 // -------------------------------------
+
+
+
 // Spread operator:
+
 // Spreads the value of elements of two/more arrays into one array and returns a new array  
 // concat canwork on only 2 arrays at a time
+
+
 const a4=[...marvel2,...indian2,...indian]; //Called spread operator
 console.log(a4);
 

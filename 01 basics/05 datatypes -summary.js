@@ -76,6 +76,7 @@ String name = "John"; // name is a String
 /*Pros and Cons:
 
 -> Dynamic Typing (JavaScript): Offers more flexibility but can lead to runtime errors if types are not handled carefully.
+
 -> Static Typing: Provides type safety and error-checking at compile-time, though it may require more initial strictness and verbosity.*/
 
 // Float values or decimal values are also considered under the number data type in javascript. They don't have any other special class named as float
@@ -85,6 +86,7 @@ String name = "John"; // name is a String
 Uniqueness:
 
 -> Each Symbol is guaranteed to be unique, even if they are created with the same description.
+
 -> This uniqueness makes Symbol useful for creating private or hidden properties on objects, as no two symbols are ever the same.*/
 const id1=Symbol('123')
 const id2=Symbol('123')
@@ -128,7 +130,7 @@ Return type of variables in JavaScript☕
        BigInt  =>  bigint
 
 2) Non-primitive Datatypes
-       Arrays  =>  object
+       Arrays  =>  object☕
        Function  =>  function object
        Object  =>  object */
 

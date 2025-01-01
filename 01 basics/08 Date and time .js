@@ -5,6 +5,7 @@
 
 let myDate=new Date(); //gives current instance date nd time
 console.log(myDate);
+console.log(typeof myDate);//object
 // 2024-11-01T07:58:13.639Z
 
 console.log(myDate.toString());
@@ -34,6 +35,7 @@ console.log(typeof myDate);
 
 // to declare a specific date
 // note: Months start from zero in javascript in array form
+
 const mydate2=new Date(-1,2023,0,23);
 console.log(mydate2.toDateString()); //Mon Jan 23 2023
 
@@ -66,22 +68,26 @@ Behavior: If you provide a value of 0, it refers to the last day of the previous
 Example:
 new Date(2023, 0, 1) refers to January 1, 2023.
 new Date(2023, 0, 0) refers to December 31, 2022.
+
 4. Hour (hour)
 Type: Integer (0-23)
 Description: Represents the hour of the day in a 24-hour format.
 Example:
 new Date(2023, 0, 1, 0) represents midnight (00:00) on January 1, 2023.
 new Date(2023, 0, 1, 23) represents 11 PM (23:00) on January 1, 2023.
+
 5. Minute (minute)
 Type: Integer (0-59)
 Description: Represents the minutes past the hour.
 Example:
 new Date(2023, 0, 1, 0, 30) represents 12:30 AM (midnight plus 30 minutes) on January 1, 2023.
+
 6. Second (second)
 Type: Integer (0-59)
 Description: Represents the seconds past the minute.
 Example:
 new Date(2023, 0, 1, 0, 30, 45) represents 12:30:45 AM on January 1, 2023.
+
 7. Millisecond (millisecond)
 Type: Integer (0-999)
 Description: Represents the milliseconds past the second.
@@ -101,7 +107,9 @@ The default for hour, minute, second, and millisecond is 0. */
 const myDate2 = new Date(2023, 0); // January 1, 2023, 00:00:00.000
 
 // to write date in dd-yy-mm format, month starts from 1
+
 let date4=new Date("2024-01-23"); //yy-mm-dd syntax
+
 console.log(date4.toLocaleString()); //23/1/2024, 5:30:00 am
 
 let date5=new Date("03-08-2003");
@@ -113,6 +121,7 @@ console.log(myTime); //1730453261879 (in milliseconds)
 // We cannot get exact time in javascript. We can get only milliseconds. Thus, in order to compare two timelines, we can see the current milliseconds And the milliseconds from the time being
 
 // In above example my time shows the time from the epoch time to the current time
+//Epoch time, also known as Unix time, is the number of seconds that have elapsed since January 1, 1970 at 00:00:00 UTC
 
 let createdDate = new Date("2003-07-13");
 console.log(createdDate.getTime()); //1058054400000
@@ -140,7 +149,10 @@ console.log(newDate.getDay());
 // String interpolation means backtics
 // To get suggestions in vs code press ctrl+space
 // Following can be done to customize date and time format. You. using the local string property.
+let newDate= new Date(); 
+
 newDate.toLocaleString('default',{
     weekday:"long", //ctrl+space,
     // timeZone:
 })
+console.log(newDate);

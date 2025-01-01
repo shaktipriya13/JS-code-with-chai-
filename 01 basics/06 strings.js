@@ -28,6 +28,19 @@ When you use console.log(str1.__proto__), you are logging the prototype object o
 console.log(str1.length); //length Is a property/method and not a function
 
 console.log(str1.toUpperCase());//Here the actual string is not changed because a copy has been made in the stack memory And heap is not used as a reference -Important for interview☕
+/*
+Interview Insight
+When asked about immutability or why toUpperCase() doesn’t change the original string:
+-> Mention that primitives (like strings) are immutable in JavaScript.
+
+-> Explain that a new copy of the string is created in memory and returned, 
+leaving the original string untouched.
+
+-> Highlight that since heap memory is not used for primitives, the operation is 
+efficient and self-contained in the stack memory.
+
+In JavaScript, heap memory is used to store objects, arrays, and other non-primitive (reference) types. It's where dynamic memory allocation happens, allowing for flexible and efficient memory management.
+*/ 
 
 // Go through all the string methods and write an article -interview
 
@@ -36,22 +49,25 @@ let n="Shakti Priya";
 let sub1=n.substring(0,4); //will go upto n-1
 let sub2=n.substring(-8,4); //starts from 0 only
 console.log(sub1);
+console.log(sub2);
 // Substr cannot be given negative values. Negative values can be given in the slice method. But if you try to give negative values in the substr method, it will start from zero only
 /*Using Negative Indexes
 When you use a negative index, it counts backwards from the end of the string:
 
 -1 refers to the last character.
 -2 refers to the second-to-last character, and so on.*/
-const str = "Hello, World!";
 
+const str = "Hello, World!";
 // Slice the last 6 characters
 const slice1 = str.slice(-6); // "World!"
 console.log(slice1); // Output: "World!"
 
+const str = "Hello, World!";
 // Slice from the 7th character from the end to the end
-const slice2 = str.slice(-6, -1); // "World"
+const slice2 = str.slice(-6, -1); // "World"//back se ek kam tak jayega and 0 se starts indexing even in bkward
 console.log(slice2); // Output: "World"
 
+const str = "Hello, World!";
 // Slice the last 5 characters
 const slice3 = str.slice(-5, -1); // "orld"
 console.log(slice3); // Output: "orld"
@@ -70,6 +86,8 @@ Key Points
 */
 
 const aString = "Mozilla";
+//The substr() method in JavaScript is visually struck out (cut) because it is deprecated. This means that it is no longer recommended for use in modern JavaScript and may be removed in future versions of the language. Instead, developers are encouraged to use the more modern and versatile substring() or slice() methods for extracting parts of strings.
+
 
 console.log(aString.substr(0, 1)); // 'M'
 console.log(aString.substr(1, 0)); // ''
@@ -138,7 +156,7 @@ o	Used in Unicode text.
 
 // replace
 // let url ="https://www.codewithharry.com/           notes/";
-// If space is added in between of the url, the browser does not understand the space and replaces it with % 20. Example shown below:
+// If space is added in between of the url, the browser does not understand the space and replaces it with %20. Example shown below:
 // let url2 = "https://www.codewithharry.com/%20%20%20%20%20%20%20%20%20%20notes/";
 
 /*When you include spaces in a URL, browsers and web servers typically do not handle them well because spaces are not valid characters in URLs. Instead, they are replaced with a specific encoding known as URL encoding or percent encoding.

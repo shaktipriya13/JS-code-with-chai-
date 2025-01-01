@@ -12,7 +12,7 @@ console.log(score2.__proto__);//write and see all the fxns available in browser'
 // console.log(score2.toString());
 console.log(score2.toString().indexOf('9'));//score2 = 900
 
-// below syntax is useful for e-commerce application. We generally use the fixed keyword for fixing two decimal or 1 decimal places after the number, because the clients don't have the experience to see such a large number of digits after the decimal. So in E-Commerce application, generally 'fixed' is used
+// below syntax is useful for e-commerce application. We generally use the "fixed" keyword for fixing two decimal or 1 decimal places after the number, because the clients don't have the experience to see such a large number of digits after the decimal. So in E-Commerce application, generally 'fixed' is used
 
 const balance=new Number(100);
 console.log(balance.toFixed(2));
@@ -26,7 +26,6 @@ console.log(num2.toPrecision(4)); //123.9
 
 const num3=1123.8966
 console.log(num3.toPrecision(3)); //1.12e+3
-
 
 
 
@@ -58,6 +57,7 @@ console.log(2**3);
 // min and max fxns can beused to fin minm and maxm elmnts in the array
 console.log(Math.min(3,1,9,6));
 console.log(Math.max(9,2,10,33));
+//max and min don't work on arrays
 
 console.log(Math.random()); //gives value always b/w between 0 (inclusive) and 1 (exclusive)
 
@@ -83,5 +83,5 @@ Explanation
 // to find a value b/w a min and max range :general formula
 const max=30,min =40;
 
-console.log(Math.floor(Math.random()*(max-min+1))+min); //jo bhi minm value chhiye usko add krlo
+console.log((Math.floor(Math.random()*(max-min+1)))+min); //jo bhi minm value chhiye usko add krlo
 // max-min+1 range batata ha ki kitni aage tak values chhiye
