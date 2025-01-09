@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="t1">Hi Myself Shakti Priya</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+
+    
+</body>
+<script>
+    const e2=function(){
+        document.querySelector('#t1').innerHTML="I am a web develper and coder";
+    }
+    // const e4=setTimeout(e2, 1000);
+    // const e3=document.querySelector('#stop').addEventListener('click',function(){
+    //     // clearTimeout(e4);
+    //     console.log("Stopped");
+    // })
+    const e5=function(){
+        console.log("Shakti");
+        console.log(Date.now());
+    } 
+    // setInterval(e5,1000);    
+
+    const e6=function(){
+        document.querySelector('#t1').innerHTML="Hi Myself Shakti Priya";
+    }
+    // const i1=setInterval(e2,1000);//first assign the setinterval mthds to a variable to clear them later on...variable me assign hone ke bad bhi it will keep on running
+    // const i2=setInterval(e6,2000);
+    
+    let i1,i2;//giving them large scope
+    const e7=document.querySelector('#start').addEventListener('click',function(){
+        i1=setInterval(e2,1000);
+        i2=setInterval(e6,2000);
+    })
+    const e8=document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(i1);
+        clearInterval(i2);
+    })
+</script>
+</html>

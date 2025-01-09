@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop  </button>
+</body>
+<script>
+    //also read clearInterval and clearTimeout for interview
+    //settimeout is a mthd but this mthd also calls an api
+    setTimeout(function(){
+        console.log("Shakti");
+    },2000);
+
+    const sayName=function(){
+        console.log("Mithi");
+    }
+    const changeTitle=function(){
+        document.querySelector('h1').innerHTML="Best JS series";
+    }
+    const a=setTimeout(changeTitle,1000);//passing fxn as refernce
+    //will change the text after 3 seconds
+    // clearTimeout(a);//will stop execution of settimout
+    //cleartimeout me particular settimeout ka refernce ka pass krna hota ha
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(a);//will stop changeTitle from occuring if stop button is clicked
+        console.log("STOPPED");
+    })
+</script>
+</html>
