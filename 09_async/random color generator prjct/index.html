@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Random color generator Prjct</h1> 
+   <button id="start">START</button>
+   <button id="stop">STOP</button>
+</body>
+    <script>
+        const randomColor=function(){
+            const hex="0123456789ABCDEF"; //n=16
+            let color="#"
+            for(let i=0;i<6;++i){
+                color+=hex[Math.floor(Math.random()*16)];
+            }return color;
+        }
+        let e1,e2;
+        
+        const a1=function(){
+            const c1=randomColor();
+            document.querySelector('body').style.backgroundColor=c1;
+        }
+        let intervalID;
+        const b1=document.querySelector('#start').addEventListener('click',function(){
+            intervalID=setInterval(a1,500);
+            // for cleaner code writing add a safety chk as shown:
+            // if(intervalID==null){
+            //     intervalID=setInterval(a1,500);
+            // }
+        })
+        const b2=document.querySelector('#stop').addEventListener('click',function(){
+            clearInterval(intervalID);
+            intervalID=null;//for professinal work  & clean code do derefrnce or clear the variable
+        })
+
+        //note: edge cases detect krna hi hume basic coder se advance coder banata ha
+
+    </script>
+</html>
+<!-- last 10 minutes left of video 38 -->
+ 
